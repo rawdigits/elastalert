@@ -94,6 +94,7 @@ def load_options(rule):
     rule.setdefault('timestamp_field', '@timestamp')
     rule.setdefault('filter', [])
     rule.setdefault('use_local_time', True)
+    rule.setdefault('es_timeout', 10)
 
     # Make sure we have required options
     if required_locals - frozenset(rule.keys()):

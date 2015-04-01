@@ -36,7 +36,7 @@ def check_files():
         load_options(conf)
         print("Successfully loaded %s\n" % (conf['name']))
 
-        es_client = Elasticsearch(host=conf['es_host'], port=conf['es_port'])
+        es_client = Elasticsearch(host=conf['es_host'], port=conf['es_port'], timeout=conf['es_timeout'])
         for days in args.days:
             start_time = ts_now() - datetime.timedelta(days=days)
             end_time = ts_now()
